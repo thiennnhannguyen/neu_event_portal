@@ -226,8 +226,8 @@ function renderChrome(activePage) {
   headerEl.innerHTML = `
     <div class="header-inner container">
       <a href="index.html" class="brand" aria-label="NEU Event Portal — Trang chủ">
-        <span class="brand-mark" aria-hidden="true">NEU</span>
-        <span class="brand-word">Event Portal</span>
+        <img class="brand-logo" src="img/favicon.svg" alt="" width="36" height="36" />
+        <span class="brand-word"><b>NEU</b> Event Portal</span>
       </a>
       <nav class="main-nav" aria-label="Điều hướng chính">${navItems.map((n) => navLink(n, "nav-link")).join("")}</nav>
       <div class="header-actions">${actionsHtml}</div>
@@ -275,7 +275,7 @@ function renderChrome(activePage) {
     footerEl.innerHTML = `
       <div class="container footer-inner">
         <div class="footer-brand">
-          <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true">NEU</span><span class="brand-word">Event Portal</span></a>
+          <a href="index.html" class="brand"><img class="brand-logo" src="img/favicon.svg" alt="" width="36" height="36" /><span class="brand-word"><b>NEU</b> Event Portal</span></a>
           <p>Cổng thông tin sự kiện dành cho sinh viên Đại học Kinh tế Quốc dân — đồ án học phần Phát triển Website.</p>
         </div>
         <nav class="footer-col" aria-label="Khám phá">
