@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đăng nhập — NEU Event Portal</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main id="main" class="auth-shell">
+  <div class="auth-visual">
+    <h2>Một tài khoản cho mọi hoạt động sinh viên NEU.</h2>
+    <p>Đăng nhập để đăng ký sự kiện, nhận vé QR và theo dõi lịch của bạn.</p>
+    <ul class="auth-points"><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Đăng ký sự kiện chỉ với một lần bấm</span></li><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Nhắc lịch trước 24 giờ với sự kiện quan tâm</span></li><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ban tổ chức quản lý sự kiện và điểm danh</span></li></ul>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-form">
+      <h1>Đăng nhập</h1>
+      <p class="sub">Dùng email và mật khẩu đã đăng ký hoặc được cấp.</p>
+
+      <form id="login-form" novalidate>
+        <p class="form-error" id="login-error" role="alert"></p>
+        <div class="field">
+          <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" required autocomplete="username" placeholder="ten.sv@st.neu.edu.vn" />
+        </div>
+        <div class="field">
+          <label for="password">Mật khẩu <span class="req" aria-hidden="true">*</span></label>
+          <input type="password" id="password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+      </form>
+
+      <div class="auth-links">
+        <a href="forgot-password.html">Quên mật khẩu?</a>
+        <a href="register.html">Tạo tài khoản sinh viên</a>
+      </div>
+
+      <details class="demo-box" id="demo-box">
+        <summary>
+          <span>Tài khoản demo<small>Bấm một tài khoản để điền nhanh · mật khẩu 123456</small></span>
+          <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="demo-inner">
+          <div class="role-tabs" id="role-tabs" role="group" aria-label="Lọc theo vai trò"></div>
+          <div class="demo-accounts" id="demo-accounts"></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js?v=4"></script>
+<script src="js/services.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
+<script src="js/login.js?v=4"></script>
+</body>
+</html>

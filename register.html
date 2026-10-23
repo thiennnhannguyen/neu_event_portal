@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đăng ký tài khoản — NEU Event Portal</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main id="main" class="auth-shell">
+  <div class="auth-visual">
+    <h2>Không bỏ lỡ sự kiện nào trong quãng đời sinh viên.</h2>
+    <p>Tạo tài khoản sinh viên miễn phí bằng mã sinh viên và email của bạn.</p>
+    <ul class="auth-points"><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Vé QR cho mọi sự kiện đã đăng ký</span></li><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Lịch cá nhân và lịch sử tham gia</span></li><li><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Theo dõi điểm Đoàn được cấp</span></li></ul>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-form wide">
+      <h1>Tạo tài khoản sinh viên</h1>
+      <p class="sub">Đăng ký để tham gia sự kiện, lưu sự kiện quan tâm và nhận nhắc lịch.</p>
+
+      <form id="register-form" novalidate>
+        <p class="form-error" id="register-error" role="alert"></p>
+        <div class="field">
+          <label for="r-name">Họ và tên <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="r-name" required autocomplete="name" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-code">Mã sinh viên <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="r-code" required inputmode="numeric" pattern="[0-9]{8}" aria-describedby="r-code-hint" />
+            <p class="field-hint" id="r-code-hint">Gồm 8 chữ số.</p>
+          </div>
+          <div class="field">
+            <label for="r-class">Lớp <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="r-class" required placeholder="QTKD 64A" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-faculty">Khoa / Viện <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="r-faculty" required />
+          </div>
+          <div class="field">
+            <label for="r-cohort">Khóa <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="r-cohort" required placeholder="K64" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="r-email" required autocomplete="email" aria-describedby="r-email-hint" />
+          <p class="field-hint" id="r-email-hint">Email xác nhận đăng ký sự kiện sẽ được gửi tới địa chỉ này.</p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-password">Mật khẩu <span class="req" aria-hidden="true">*</span></label>
+            <input type="password" id="r-password" required minlength="6" autocomplete="new-password" aria-describedby="r-pw-hint" />
+            <p class="field-hint" id="r-pw-hint">Tối thiểu 6 ký tự.</p>
+          </div>
+          <div class="field">
+            <label for="r-confirm">Nhập lại mật khẩu <span class="req" aria-hidden="true">*</span></label>
+            <input type="password" id="r-confirm" required minlength="6" autocomplete="new-password" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="check-line"><input type="checkbox" id="r-agree" required /> Tôi đồng ý với quy định sử dụng Cổng thông tin sự kiện NEU.</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Tạo tài khoản</button>
+      </form>
+
+      <div class="auth-links">
+        <span class="muted">Đã có tài khoản?</span>
+        <a href="login.html">Đăng nhập</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js?v=4"></script>
+<script src="js/services.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
+<script src="js/register.js?v=4"></script>
+</body>
+</html>

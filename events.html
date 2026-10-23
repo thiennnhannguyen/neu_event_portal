@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Danh sách sự kiện — NEU Event Portal</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <h1>Sự kiện</h1>
+      <p>Tìm và lọc các sự kiện đang mở tại Đại học Kinh tế Quốc dân.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <form class="list-toolbar" id="toolbar-form" role="search">
+        <div class="search-field">
+          <label for="search-input" class="sr-only">Tìm kiếm sự kiện</label>
+          <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="search-input" placeholder="Tên sự kiện, đơn vị tổ chức, địa điểm..." />
+        </div>
+        <label class="sort-label" for="sort-select">Sắp xếp
+          <select id="sort-select" class="select"></select>
+        </label>
+      </form>
+
+      <div class="mobile-list-bar">
+        <button type="button" class="btn btn-outline" id="btn-open-filters" aria-expanded="false" aria-controls="filter-box">
+          <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></svg>
+          Bộ lọc <span class="filter-count" id="filter-count" hidden></span>
+        </button>
+        <div>
+          <label for="sort-select-m" class="sr-only">Sắp xếp</label>
+          <select id="sort-select-m" class="select"></select>
+        </div>
+      </div>
+
+      <div class="list-layout">
+        <aside class="filter-box" id="filter-box" aria-labelledby="filter-title">
+          <div class="filter-head">
+            <h2 id="filter-title">Bộ lọc</h2>
+            <button type="button" class="modal-close" id="btn-close-filters" aria-label="Đóng bộ lọc">
+              <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <div class="filter-inner" id="filter-inner">
+            <details class="filter-group" id="fg-category" open>
+              <summary>Danh mục <span class="group-count" hidden></span></summary>
+              <fieldset>
+                <legend class="sr-only">Danh mục</legend>
+                <div id="filter-categories"></div>
+              </fieldset>
+            </details>
+            <details class="filter-group" id="fg-time" open>
+              <summary>Thời gian <span class="group-count" hidden></span></summary>
+              <fieldset>
+                <legend class="sr-only">Thời gian</legend>
+                <label class="filter-check"><input type="radio" name="timeframe" value="all" checked/> Tất cả</label>
+                <label class="filter-check"><input type="radio" name="timeframe" value="week"/> Trong 7 ngày tới</label>
+                <label class="filter-check"><input type="radio" name="timeframe" value="month"/> Trong tháng này</label>
+                <label class="filter-check"><input type="radio" name="timeframe" value="custom"/> Khoảng ngày tùy chọn</label>
+                <div id="custom-range" hidden>
+                  <label class="mini" for="filter-from">Từ ngày</label>
+                  <input type="date" id="filter-from" />
+                  <label class="mini" for="filter-to">Đến ngày</label>
+                  <input type="date" id="filter-to" />
+                </div>
+              </fieldset>
+            </details>
+            <details class="filter-group" id="fg-unit">
+              <summary>Đơn vị tổ chức <span class="group-count" hidden></span></summary>
+              <fieldset>
+                <legend class="sr-only">Đơn vị tổ chức</legend>
+                <label for="filter-unit" class="sr-only">Đơn vị tổ chức</label>
+                <select id="filter-unit" class="select"><option value="">Tất cả đơn vị</option></select>
+              </fieldset>
+            </details>
+            <details class="filter-group" id="fg-format">
+              <summary>Hình thức <span class="group-count" hidden></span></summary>
+              <fieldset>
+                <legend class="sr-only">Hình thức</legend>
+                <label class="filter-check"><input type="radio" name="format" value="all" checked/> Tất cả</label>
+                <label class="filter-check"><input type="radio" name="format" value="offline"/> Trực tiếp</label>
+                <label class="filter-check"><input type="radio" name="format" value="online"/> Trực tuyến</label>
+              </fieldset>
+            </details>
+            <details class="filter-group" id="fg-status">
+              <summary>Tình trạng <span class="group-count" hidden></span></summary>
+              <fieldset>
+                <legend class="sr-only">Tình trạng</legend>
+                <label class="filter-check"><input type="checkbox" id="filter-available"/> Còn chỗ</label>
+                <label class="filter-check"><input type="checkbox" id="filter-open"/> Còn hạn đăng ký</label>
+              </fieldset>
+            </details>
+            <button type="button" class="btn btn-ghost btn-sm btn-block filter-desktop-only" id="btn-clear-filters">Xóa bộ lọc</button>
+          </div>
+          <div class="filter-foot">
+            <button type="button" class="btn btn-ghost" id="btn-sheet-clear">Xóa lựa chọn</button>
+            <button type="button" class="btn btn-primary" id="btn-sheet-apply">Áp dụng</button>
+          </div>
+        </aside>
+
+        <div>
+          <div class="result-bar">
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+            <div class="view-toggle" role="group" aria-label="Kiểu hiển thị">
+              <button type="button" id="btn-view-grid" data-view="grid" aria-pressed="true">
+                <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                Lưới
+              </button>
+              <button type="button" id="btn-view-list" data-view="list" aria-pressed="false">
+                <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                Danh sách
+              </button>
+            </div>
+          </div>
+          <div class="active-filters" id="active-filters"></div>
+          <div class="card-grid" id="events-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js?v=4"></script>
+<script src="js/services.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
+<script src="js/events.js?v=4"></script>
+</body>
+</html>

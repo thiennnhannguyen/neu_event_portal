@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEU Event Portal — Cổng thông tin sự kiện Đại học Kinh tế Quốc dân</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main id="main">
+  <!-- HERO: tìm kiếm + một sự kiện nổi bật thực tế -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid" id="hero-grid">
+      <div>
+        <span class="eyebrow">Cổng sự kiện sinh viên NEU</span>
+        <h1 id="hero-title">Khám phá sự kiện.<br/><span class="accent">Kết nối cộng đồng NEU.</span></h1>
+        <p class="lede">Cuộc thi, hội thảo, workshop, hoạt động Đoàn - Hội và tuyển thành viên của toàn trường — tìm, đăng ký và nhận vé ngay tại đây.</p>
+
+        <form class="search-panel" id="hero-search-form" role="search">
+          <div class="search-field">
+            <label for="hero-search-input" class="sr-only">Tìm kiếm sự kiện</label>
+            <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="hero-search-input" placeholder="Tên sự kiện, đơn vị, chủ đề..." />
+          </div>
+          <button type="submit" class="btn btn-primary">Tìm sự kiện</button>
+        </form>
+
+        <nav class="hero-cats" aria-label="Danh mục sự kiện">
+          <div class="cat-scroll" id="hero-pills"></div>
+        </nav>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+      <div class="hero-feature" id="hero-feature"></div>
+    </div>
+  </section>
+
+  <!-- SỰ KIỆN NỔI BẬT -->
+  <section class="section" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 id="featured-title">Sự kiện nổi bật</h2>
+          <p>Được Ban quản trị ghim trên cổng thông tin.</p>
+        </div>
+        <a class="link-more" href="events.html">Xem tất cả</a>
+      </div>
+      <div class="featured-grid" id="featured-rail"></div>
+    </div>
+  </section>
+
+  <!-- 7 NGÀY TỚI -->
+  <section class="section section-alt" aria-labelledby="week-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 id="week-title">Diễn ra trong 7 ngày tới</h2>
+          <p id="week-sub">Sắp xếp theo thời gian gần nhất.</p>
+        </div>
+        <a class="link-more" href="events.html?time=week">Xem lịch đầy đủ</a>
+      </div>
+      <div class="week-list" id="upcoming-grid"></div>
+    </div>
+  </section>
+
+  <!-- DÀNH CHO BAN TỔ CHỨC -->
+  <section class="section-tight" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-block">
+        <div>
+          <h2 id="cta-title">Bạn là CLB, Khoa/Viện hay Đoàn - Hội?</h2>
+          <p>Đăng sự kiện lên cổng thông tin để tiếp cận sinh viên toàn trường, quản lý người tham gia và điểm danh tại chỗ.</p>
+          <ul class="cta-points">
+            <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tạo và gửi duyệt sự kiện</li>
+            <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Quản lý & xuất danh sách đăng ký</li>
+            <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Điểm danh bằng mã vé QR</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a href="login.html?role=organizer" class="btn btn-primary" id="cta-btn">Đăng nhập Ban tổ chức</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js?v=4"></script>
+<script src="js/services.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
+<script src="js/home.js?v=4"></script>
+</body>
+</html>
